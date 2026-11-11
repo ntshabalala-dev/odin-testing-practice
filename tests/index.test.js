@@ -1,3 +1,4 @@
+import calc from "../calculator";
 import { reverse } from "../reverse";
 
 describe("reverse", () => {
@@ -31,5 +32,11 @@ describe("reverse", () => {
 		expect(() => reverse(undefined)).toThrow(TypeError);
 
 		expect(() => reverse(null)).toThrow(TypeError);
+	});
+});
+
+describe.only("calculator", () => {
+	it("Add two numbers", () => {
+		expect(calc.add(2, 3)).toBe(5);
 	});
 });
