@@ -36,7 +36,38 @@ describe("reverse", () => {
 });
 
 describe.only("calculator", () => {
+	// positive test cases
 	it("Add two numbers", () => {
 		expect(calc.add(2, 3)).toBe(5);
+	});
+	it("Subtract two numbers", () => {
+		expect(calc.subtract(6, 3)).toBe(3);
+	});
+	it("Multiply two numbers", () => {
+		expect(calc.multiply(2, 3)).toBe(6);
+	});
+	it("Divide two numbers", () => {
+		expect(calc.divide(10, 5)).toBe(2);
+	});
+
+	// Floating point numbers
+	it("Add two float numbers", () => {
+		expect(calc.add(0.1, 0.2)).toBe(0.3);
+	});
+	it("Subtract two float numbers", () => {
+		expect(calc.subtract(0.3, 0.1)).toBe(0.2);
+	});
+
+	it("Multiply two float numbers", () => {
+		expect(calc.multiply(2.5, 3.3)).toBe(8.25);
+	});
+
+	it("Divide two float numbers", () => {
+		expect(calc.divide(2.5, 3, 3)).toBe(0.8);
+	});
+
+	// Errors
+	it("Cannot divide by zero", () => {
+		expect(() => calc.divide(10, 0)).toThrow("Cannot divide by zero");
 	});
 });
