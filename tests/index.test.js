@@ -1,3 +1,4 @@
+import caesar from "../caesar";
 import calc from "../calculator";
 import { reverse } from "../reverse";
 
@@ -35,7 +36,7 @@ describe("reverse", () => {
 	});
 });
 
-describe.only("calculator", () => {
+describe("calculator", () => {
 	// positive test cases
 	it("Add two numbers", () => {
 		expect(calc.add(2, 3)).toBe(5);
@@ -69,5 +70,11 @@ describe.only("calculator", () => {
 	// Errors
 	it("Cannot divide by zero", () => {
 		expect(() => calc.divide(10, 0)).toThrow("Cannot divide by zero");
+	});
+});
+
+describe("Caesar Shift Cipher", () => {
+	it("test 1", () => {
+		expect(caesar("hello")).toBe("hello");
 	});
 });
